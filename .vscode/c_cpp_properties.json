@@ -1,0 +1,128 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ]
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${workspaceRoot}",
+                "${workspaceFolder}/STM32F4xx_HAL_Driver/inc",
+                "${workspaceFolder}/APP/inc",
+                "${workspaceFolder}/CMSIS/Device/ST/STM32F4xx/Include",
+                "${workspaceFolder}/CMSIS/Device/ST/STM32F4xx/Include",
+                "${workspaceFolder}/STM32F429I-Discovery/inc",
+                "${workspaceRoot}/lib/include",
+                "${workspaceRoot}/lib/include/sys",
+                "${workspaceRoot}/lib/arm-none-eabi/6.3.1/include",
+                "${workspaceRoot}/APP/inc",
+                "${workspaceRoot}/CMSIS/Include",
+                "${workspaceRoot}/Kernel/FreeRTOS/include",
+                "${workspaceRoot}/STM32F4xx_HAL_Driver/inc",
+                "${workspaceRoot}/STM32F4xx_System/inc",
+                "${workspaceRoot}/STM32F429I-Discovery/inc",
+                "${workspaceRoot}/STM32F429I-Discovery/Components",
+                "${workspaceRoot}/STM32F429I-Discovery/Fonts",
+                "${workspaceRoot}/Kernel/FreeRTOS/portable/GCC/ARM_CM4F"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceRoot}",
+                    "${workspaceRoot}/lib/include",
+                    "${workspaceRoot}/lib/include/sys",
+                    "${workspaceRoot}/lib/arm-none-eabi/6.3.1/include",
+                    "${workspaceRoot}/APP/inc",
+                    "${workspaceRoot}/CMSIS/Include",
+                    "${workspaceRoot}/Kernel/FreeRTOS/include",
+                    "${workspaceRoot}/STM32F4xx_HAL_Driver/inc",
+                    "${workspaceRoot}/STM32F4xx_System/inc",
+                    "${workspaceRoot}/STM32F429I-Discovery/inc",
+                    "${workspaceRoot}/STM32F429I-Discovery/Components",
+                    "${workspaceRoot}/STM32F429I-Discovery/Fonts"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "E:/Visual_Studio/Visual_Studio2015/VC/include/*",
+                "E:/Visual_Studio/Visual_Studio2015/VC/atlmfc/include/*",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
+                "${workspaceRoot}",
+                "${workspaceRoot}/lib/include",
+                "${workspaceRoot}/lib/include/sys",
+                "${workspaceRoot}/lib/arm-none-eabi/6.3.1/include",
+                "${workspaceRoot}/APP/inc",
+                "${workspaceRoot}/CMSIS/Include",
+                "${workspaceRoot}/Kernel/FreeRTOS/include",
+                "${workspaceRoot}/STM32F4xx_HAL_Driver/inc",
+                "${workspaceRoot}/STM32F4xx_System/inc",
+                "${workspaceRoot}/STM32F429I-Discovery/inc",
+                "${workspaceRoot}/STM32F429I-Discovery/Components",
+                "${workspaceRoot}/STM32F429I-Discovery/Fonts",
+                "${workspaceRoot}/Kernel/FreeRTOS/portable/GCC/ARM_CM4F"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "E:/Visual_Studio/Visual_Studio2015/VC/include/*",
+                    "E:/Visual_Studio/Visual_Studio2015/VC/atlmfc/include/*",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
+                    "${workspaceRoot}",
+                    "${workspaceRoot}/lib/include",
+                    "${workspaceRoot}/lib/include/sys",
+                    "${workspaceRoot}/lib/arm-none-eabi/6.3.1/include",
+                    "${workspaceRoot}/APP/inc",
+                    "${workspaceRoot}/CMSIS/Include",
+                    "${workspaceRoot}/Kernel/FreeRTOS/include",
+                    "${workspaceRoot}/STM32F4xx_HAL_Driver/inc",
+                    "${workspaceRoot}/STM32F4xx_System/inc",
+                    "${workspaceRoot}/STM32F429I-Discovery/inc",
+                    "${workspaceRoot}/STM32F429I-Discovery/Components",
+                    "${workspaceRoot}/STM32F429I-Discovery/Fonts"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

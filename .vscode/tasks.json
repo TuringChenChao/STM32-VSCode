@@ -1,0 +1,29 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "openocd",
+            "type": "shell",
+            "command": "openocd -f tools/openocd_settings/stlink.cfg -f tools/openocd_settings/stm32f4x.1.cfg"
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "tools/build.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "openocd official",
+            "type": "shell",
+            "command": "openocd -f /board/stm32f429discovery.cfg",
+            "options": {
+                "cwd": "/home/cer1991/OpenOCD/openocd/tcl"
+            }
+        }
+    ],
+}

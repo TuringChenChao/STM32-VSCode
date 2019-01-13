@@ -1,0 +1,227 @@
+arm-none-eabi-gdb --interpreter=mi
+=thread-group-added,id="i1"
+~"GNU gdb (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 8.1.0.20180315-git\n"
+~"Copyright (C) 2018 Free Software Foundation, Inc.\n"
+~"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.  Type \"show copying\"\nand \"show warranty\" for details.\n"
+~"This GDB was configured as \"--host=x86_64-linux-gnu --target=arm-none-eabi\".\nType \"show configuration\" for configuration details."
+~"\nFor bug reporting instructions, please see:\n"
+~"<http://www.gnu.org/software/gdb/bugs/>.\n"
+~"Find the GDB manual and other documentation resources online at:\n<http://www.gnu.org/software/gdb/documentation/>.\n"
+~"For help, type \"help\".\n"
+~"Type \"apropos word\" to search for commands related to \"word\".\n"
+(gdb)
+-exec set target-async on
+^error,msg="Undefined MI command: exec",code="undefined-command"
+(gdb)
+-gdb-set target-async on
+^done
+(gdb)
+-interpreter-exec console "file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'"
+~"Reading symbols from /home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf..."
+~"done.\n"
+^done
+(gdb)
+-interpreter-exec console "target remote localhost:3333"
+&"localhost:3333: Connection timed out.\n"
+^error,msg="localhost:3333: Connection timed out."
+(gdb)
+^[[A^[[A^[[B
+&"\e[A\e[A\e[B\n"
+&"Undefined command: \"\".  Try \"help\".\n"
+^error,msg="Undefined command: \"\".  Try \"help\"."
+(gdb)
+-interpreter-exec console "target remote localhost:3333"
+~"`/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'has changed; re-reading symbols.\n"
+~"Remote debugging using localhost:3333\n"
+=thread-group-started,id="i1",pid="42000"
+=thread-created,id="1",group-id="i1"
+~"0x08002db6 in prvCheckTasksWaitingTermination () at FreeRTOS/tasks.c:3038\n"
+~"3038\t\t\twhile( uxTasksDeleted > ( UBaseType_t ) 0U )\n"
+*stopped,frame={addr="0x08002db6",func="prvCheckTasksWaitingTermination",args=[],file="FreeRTOS/tasks.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/tasks.c",line="3038"},thread-id="1",stopped-threads="all"
+^done
+(gdb)
+-exec-continue
+^running
+*running,thread-id="all"
+(gdb)
+^C&"Quit\n"
+^C&"Quit\n"
+-exec-stop
+^error,msg="Undefined MI command: exec-stop",code="undefined-command"
+(gdb)
+-exec-interrupt
+^done
+(gdb)
+~"\nProgram"
+~" received signal SIGINT, Interrupt.\n"
+~"prvCheckTasksWaitingTermination () at FreeRTOS/tasks.c:3031\n"
+~"3031\t{\n"
+*stopped,reason="signal-received",signal-name="SIGINT",signal-meaning="Interrupt",frame={addr="0x08002d58",func="prvCheckTasksWaitingTermination",args=[],file="FreeRTOS/tasks.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/tasks.c",line="3031"},thread-id="1",stopped-threads="all"
+
+
+vscode:
+1: (138) LaunchOptions<LocalLaunchOptions xmlns='http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014'
+1: (146) LaunchOptions  ExePath='/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'
+1: (146) LaunchOptions  WorkingDirectory='/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo'
+1: (146) LaunchOptions  ExeArguments=''
+1: (146) LaunchOptions  MIDebuggerPath='/home/cer1991/ARM/Toolchain/gcc-arm-none-eabi-7-2018-q2-update-linux/gcc-arm-none-eabi-7-2018-q2-update/bin/arm-none-eabi-gdb'
+1: (146) LaunchOptions  WaitDynamicLibLoad='false'
+1: (146) LaunchOptions>
+1: (146) LaunchOptions    <SetupCommands>
+1: (146) LaunchOptions        <Command IgnoreFailures='false' Description=''>set mi-async 1</Command>
+1: (146) LaunchOptions        <Command IgnoreFailures='false' Description=''>set target-async off</Command>
+1: (146) LaunchOptions        <Command IgnoreFailures='false' Description=''>file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'</Command>
+1: (146) LaunchOptions        <Command IgnoreFailures='false' Description=''>target remote localhost:3333</Command>
+1: (146) LaunchOptions    </SetupCommands>
+1: (146) LaunchOptions    <LaunchCompleteCommand>None</LaunchCompleteCommand>
+1: (146) LaunchOptions</LocalLaunchOptions>
+1: (217) TempFile=/tmp/Microsoft-MIEngine-fifo-iq6pjz8d.rf1
+1: (217) TempFile=/tmp/Microsoft-MIEngine-fifo-wnbg8h48.09j
+1: (217) TempFile=/tmp/Microsoft-MIEngine-fifo-ycsp9dab.v1t
+1: (626) ShellPid=7192
+1: (630) DebuggerPid=7195
+1: (631) ->=thread-group-added,id="i1"
+1: (632) ->~"GNU gdb (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 8.1.0.20180315-git\n"
+1: (632) ->~"Copyright (C) 2018 Free Software Foundation, Inc.\n"
+1: (632) ->~"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.  Type \"show copying\"\nand \"show warranty\" for details.\n"
+1: (632) ->~"This GDB was configured as \"--host=x86_64-linux-gnu --target=arm-none-eabi\".\nType \"show configuration\" for configuration details."
+1: (632) ->~"\nFor bug reporting instructions, please see:\n"
+1: (632) ->~"<http://www.gnu.org/software/gdb/bugs/>.\n"
+1: (632) ->~"Find the GDB manual and other documentation resources online at:\n<http://www.gnu.org/software/gdb/documentation/>.\n"
+1: (632) ->~"For help, type \"help\".\n"
+1: (632) ->~"Type \"apropos word\" to search for commands related to \"word\".\n"
+1: (632) ->(gdb)
+1: (640) <-1001-gdb-set target-async on
+1: (641) ->1001^done
+1: (641) ->(gdb)
+1: (642) 1001: elapsed time 2
+1: (647) <-1002-interpreter-exec console "set mi-async 1"
+1: (648) ->1002^done
+1: (648) ->(gdb)
+1: (648) 1002: elapsed time 0
+1: (648) <-1003-interpreter-exec console "set target-async off"
+1: (649) ->=cmd-param-changed,param="mi-async",value="off"
+1: (649) ->1003^done
+1: (649) ->(gdb)
+1: (649) 1003: elapsed time 0
+1: (649) <-1004-interpreter-exec console "file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'"
+1: (650) ->~"Reading symbols from /home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf..."
+1: (654) ->~"done.\n"
+1: (655) ->1004^done
+1: (655) ->(gdb)
+1: (655) 1004: elapsed time 5
+1: (655) <-1005-interpreter-exec console "target remote localhost:3333"
+1: (655) ->~"Remote debugging using localhost:3333\n"
+1: (683) ->=thread-group-started,id="i1",pid="42000"
+1: (683) ->=thread-created,id="1",group-id="i1"
+1: (685) ->~"0x08002db8 in prvCheckTasksWaitingTermination () at FreeRTOS/tasks.c:3038\n"
+1: (685) ->~"3038\t\t\twhile( uxTasksDeleted > ( UBaseType_t ) 0U )\n"
+1: (685) ->*stopped,frame={addr="0x08002db8",func="prvCheckTasksWaitingTermination",args=[],file="FreeRTOS/tasks.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/tasks.c",line="3038"},thread-id="1",stopped-threads="all"
+1: (685) ->1005^done
+1: (685) ->(gdb)
+1: (694) 1005: elapsed time 38
+1: (694) <-1006-thread-info 1
+1: (694) <-1007-interpreter-exec console "set pagination off"
+1: (694) ->1006^done,threads=[{id="1",target-id="Remote target",frame={level="0",addr="0x08002db8",func="prvCheckTasksWaitingTermination",args=[],file="FreeRTOS/tasks.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/tasks.c",line="3038"},state="stopped"}]
+1: (694) ->(gdb)
+1: (694) ->=cmd-param-changed,param="pagination",value="off"
+1: (694) ->1007^done
+1: (694) ->(gdb)
+1: (695) 1006: elapsed time 0
+1: (697) 1007: elapsed time 2
+1: (697) <-1008-gdb-set solib-search-path /home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out:
+1: (697) ->1008^done
+1: (697) ->(gdb)
+1: (697) 1008: elapsed time 0
+1: (697) <-1009-gdb-set stop-on-solib-events 1
+1: (697) ->1009^done
+1: (697) ->(gdb)
+1: (697) 1009: elapsed time 0
+1: (697) <-1010-environment-cd /home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo
+1: (698) ->1010^done
+1: (698) ->(gdb)
+1: (698) 1010: elapsed time 0
+1: (698) <-1011-file-exec-and-symbols /home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf
+1: (701) ->1011^done
+1: (701) ->(gdb)
+1: (701) 1011: elapsed time 3
+1: (701) <-1012-interpreter-exec console "show architecture"
+1: (701) ->~"The target architecture is set automatically (currently arm)\n"
+1: (701) ->1012^done
+1: (701) ->(gdb)
+1: (701) 1012: elapsed time 0
+1: (703) <-1013-break-insert -f main
+1: (705) ->1013^done,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x08000466",func="main",file="src/main.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/APP/src/main.c",line="100",thread-groups=["i1"],times="0",original-location="main"}
+1: (705) ->(gdb)
+1: (706) 1013: elapsed time 2
+E output: {"category":"telemetry","output":"VS/Diagnostics/Debugger/Launch","data":{"VS.Diagnostics.Debugger.ImplementationName":"Microsoft.MIDebugEngine","VS.Diagnostics.Debugger.EngineVersion":"14.0.50814.1","VS.Diagnostics.Debugger.HostVersion":"14.0.50814.1","VS.Diagnostics.Debugger.AdapterId":"cppdbg","VS.Diagnostics.Debugger.Launch.Duration":662,"VS.Diagnostics.Debugger.Launch.IsCoreDump":false,"VS.Diagnostics.Debugger.VisualizerFileUsed":false,"VS.Diagnostics.Debugger.SourceFileMappings":0},"type":"output"}
+ R: {"success":true,"message":null,"request_seq":2,"command":"launch","body":null,"running":false,"refs":null,"seq":0,"type":"response"}
+E initialized: {"type":"initialized"}
+C setBreakpoints: {"source":{"name":"main.c","path":"/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/APP/src/main.c"},"lines":[268,278],"breakpoints":[{"line":268},{"line":278}],"sourceModified":false}
+1: (752) <-1014-break-insert -f main.c:268
+1: (754) ->1014^done,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x08000538",func="vTaskLED3",file="src/main.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/APP/src/main.c",line="268",thread-groups=["i1"],times="0",original-location="main.c:268"}
+1: (754) ->(gdb)
+1: (754) 1014: elapsed time 1
+1: (760) <-1015-symbol-list-lines /home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/APP/src/main.c
+1: (761) ->1015^done,lines=[{pc="0x08000438",line="77"},{pc="0x0800043e",line="78"},{pc="0x08000442",line="79"},{pc="0x08000448",line="81"},{pc="0x0800044c",line="79"},{pc="0x08000458",line="83"},{pc="0x08000460",line="92"},{pc="0x08000466",line="100"},{pc="0x0800046a",line="102"},{pc="0x08000470",line="105"},{pc="0x08000476",line="106"},{pc="0x0800047c",line="119"},{pc="0x08000482",line="121"},{pc="0x0800048a",line="122"},{pc="0x08000490",line="123"},{pc="0x08000496",line="124"},{pc="0x0800049c",line="125"},{pc="0x080004a2",line="126"},{pc="0x080004a8",line="127"},{pc="0x080004ae",line="129"},{pc="0x080004ba",line="131"},{pc="0x080004be",line="134"},{pc="0x080004dc",line="136"},{pc="0x080004fa",line="138"},{pc="0x080004fe",line="143"},{pc="0x08000524",line="263"},{pc="0x0800052c",line="266"},{pc="0x08000532",line="267"},{pc="0x08000538",line="268"},{pc="0x0800053e",line="266"},{pc="0x08000544",line="273"},{pc="0x0800054c",line="276"},{pc="0x08000552",line="277"},{pc="0x08000558",line="278"},{pc="0x0800055e",line="276"},{pc="0x08000564",line="303"},{pc="0x0800056a",line="308"},{pc="0x08000586",line="313"},{pc="0x080005a2",line="316"},{pc="0x080005a6",line="317"},{pc="0x080005ac",line="318"},{pc="0x080005b0",line="319"},{pc="0x080005b6",line="320"},{pc="0x080005ba",line="321"},{pc="0x080005c0",line="322"},{pc="0x080005c4",line="323"},{pc="0x080005c8",line="324"},{pc="0x080005d8",line="326"},{pc="0x080005dc",line="330"},{pc="0x080005e0",line="334"},{pc="0x080005e4",line="335"},{pc="0x080005e8",line="336"},{pc="0x080005ec",line="337"},{pc="0x080005f2",line="338"},{pc="0x080005f8",line="339"},{pc="0x0800060a",line="341"},{pc="0x0800060e",line="343"},{pc="0x08000620",line="353"},{pc="0x08000628",line="355"},{pc="0x0800062e",line="356"},{pc="0x08000636",line="366"},{pc="0x08000644",line="367"},{pc="0x08000646",line="369"},{pc="0x08000652",line="371"},{pc="0x08000656",line="373"},{pc="0x0800065c",line="374"},{pc="0x08000662",line="367"},{pc="0x0800066c",line="377"},{pc="0x0800066e",line="378"},{pc="0x0800067a",line="386"},{pc="0x0800067e",line="388"},{pc="0x08000684",line="389"},{pc="0x08000686",line="0"}]
+1: (761) ->(gdb)
+1: (762) 1015: elapsed time 2
+1: (772) <-1016-break-insert -f main.c:278
+1: (773) ->1016^done,bkpt={number="3",type="breakpoint",disp="keep",enabled="y",addr="0x08000558",func="vTaskLED4",file="src/main.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/APP/src/main.c",line="278",thread-groups=["i1"],times="0",original-location="main.c:278"}
+1: (773) ->(gdb)
+1: (773) 1016: elapsed time 1
+ R: {"success":true,"message":null,"request_seq":3,"command":"setBreakpoints","body":{"breakpoints":[{"id":1,"verified":true,"line":268,"message":null},{"id":2,"verified":true,"line":278,"message":null}]},"running":false,"refs":null,"seq":0,"type":"response"}
+E breakpoint: {"reason":"changed","breakpoint":{"id":1,"verified":true,"line":268,"message":null},"type":"breakpoint"}
+E breakpoint: {"reason":"changed","breakpoint":{"id":2,"verified":true,"line":278,"message":null},"type":"breakpoint"}
+C setFunctionBreakpoints: {"breakpoints":[]}
+ R: {"success":true,"message":null,"request_seq":4,"command":"setFunctionBreakpoints","body":{"breakpoints":[]},"running":false,"refs":null,"seq":0,"type":"response"}
+C setExceptionBreakpoints: {"filters":[]}
+ R: {"success":true,"message":null,"request_seq":5,"command":"setExceptionBreakpoints","body":{},"running":false,"refs":null,"seq":0,"type":"response"}
+C configurationDone: null
+ R: {"success":true,"message":null,"request_seq":6,"command":"configurationDone","body":null,"running":false,"refs":null,"seq":0,"type":"response"}
+C threads: null
+E output: {"category":"stdout","output":"=thread-group-added,id=\"i1\"\nGNU gdb (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 8.1.0.20180315-git\nCopyright (C) 2018 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.  Type \"show copying\"\nand \"show warranty\" for details.\nThis GDB was configured as \"--host=x86_64-linux-gnu --target=arm-none-eabi\".\nType \"show configuration\" for configuration details.\nFor bug reporting instructions, please see:\n<http://www.gnu.org/software/gdb/bugs/>.\nFind the GDB manual and other documentation resources online at:\n<http://www.gnu.org/software/gdb/documentation/>.\nFor help, type \"help\".\nType \"apropos word\" to search for commands related to \"word\".\nWarning: Debuggee TargetArchitecture not detected, assuming x86_64.\n=cmd-param-changed,param=\"pagination\",value=\"off\"\n","data":null,"type":"output"}
+=thread-group-added,id="i1"
+GNU gdb (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 8.1.0.20180315-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "--host=x86_64-linux-gnu --target=arm-none-eabi".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Warning: Debuggee TargetArchitecture not detected, assuming x86_64.
+=cmd-param-changed,param="pagination",value="off"
+ R: {"success":true,"message":null,"request_seq":7,"command":"threads","body":{"threads":[]},"running":false,"refs":null,"seq":0,"type":"response"}
+1: (795) <-1017-interpreter-exec console "info sharedlibrary"
+1: (795) ->~"No shared libraries loaded at this time.\n"
+1: (795) ->1017^done
+1: (795) ->(gdb)
+1: (796) 1017: elapsed time 1
+E output: {"category":"console","output":"Loaded 'shared libraries loaded at this time.'. Cannot find or open the symbol file.\n","data":null,"type":"output"}
+Loaded 'shared libraries loaded at this time.'. Cannot find or open the symbol file.
+1: (805) <-1018-thread-info
+1: (806) ->1018^done,threads=[{id="1",target-id="Remote target",frame={level="0",addr="0x08002db8",func="prvCheckTasksWaitingTermination",args=[],file="FreeRTOS/tasks.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/tasks.c",line="3038"},state="stopped"}],current-thread-id="1"
+1: (806) ->(gdb)
+1: (807) 1018: elapsed time 1
+1: (815) <-1019-stack-list-frames 0 1000
+1: (818) ->1019^done,stack=[frame={level="0",addr="0x08002db8",func="prvCheckTasksWaitingTermination",file="FreeRTOS/tasks.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/tasks.c",line="3038"},frame={level="1",addr="0x08002c2e",func="prvIdleTask",file="FreeRTOS/tasks.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/tasks.c",line="2698"},frame={level="2",addr="0x080041fc",func="pxPortInitialiseStack",file="FreeRTOS/portable/GCC/ARM_CM4F/port.c",fullname="/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/Kernel/FreeRTOS/portable/GCC/ARM_CM4F/port.c",line="252"}]
+1: (818) ->(gdb)
+1: (818) 1019: elapsed time 3
+E thread: {"reason":"started","threadId":-2,"type":"thread"}
+1: (824) <--exec-continue
+1: (824) ->^running
+1: (824) ->*running,thread-id="all"
+1: (824) ->(gdb)
+1: (824) ->~"Note: automatically using hardware breakpoints for read-only addresses.\n"
+E output: {"category":"stdout","output":"Note: automatically using hardware breakpoints for read-only addresses.\n","data":null,"type":"output"}
+Note: automatically using hardware breakpoints for read-only addresses.
+C threads: null
+ R: {"success":true,"message":null,"request_seq":8,"command":"threads","body":{"threads":[{"id":-2,"name":"Thread #-2"}]},"running":false,"refs":null,"seq":0,"type":"response"}
+C disconnect: {"restart":false}
