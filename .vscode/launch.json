@@ -54,14 +54,14 @@
             "request": "launch",
             "miDebuggerPath": "/home/cer1991/ARM/Toolchain/gcc-arm-none-eabi-7-2018-q2-update-linux/gcc-arm-none-eabi-7-2018-q2-update/bin/arm-none-eabi-gdb",
             // "targetArchitecture": "arm",
-            "program": "${workspaceRoot}\\out\\HAL_demo.elf",
+            "program": "/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/STM32-VSCode/out/HAL_demo.elf",
             "setupCommands": [
                 {
-                    "text": "file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'"
+                    "text": "file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/STM32-VSCode/out/HAL_demo.elf'"
                 },
-                {
-                    "text": "set target-async off"
-                },
+                // {
+                //     "text": "set target-async off"
+                // },
                 {
                     "text": "target remote localhost:3333"
                 },
@@ -77,13 +77,14 @@
             ],
             // "preLaunchTask": "build",
             "launchCompleteCommand": "None",
+            // "miDebuggerServerAddress": "localhost:3333",
             "externalConsole": false,
             "cwd": "${workspaceRoot}",
-            "logging": {
-                "trace": true,
-                "traceResponse": true,
-                "engineLogging": true
-            },
+            // "logging": {
+            //     "trace": true,
+            //     "traceResponse": true,
+            //     "engineLogging": true
+            // },
         },
         {
             "name": "ARM Debug ATTACH",
@@ -91,44 +92,27 @@
             "request": "launch",
             "miDebuggerPath": "/home/cer1991/ARM/Toolchain/gcc-arm-none-eabi-7-2018-q2-update-linux/gcc-arm-none-eabi-7-2018-q2-update/bin/arm-none-eabi-gdb",
             "targetArchitecture": "arm",
-            "program": "${workspaceRoot}\\out\\HAL_demo.elf",
-            // "customLaunchSetupCommands": [
-            //     {
-            //         "text": "set target-async off"
-            //     },
-            //     {
-            //         "text": "file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'"
-            //     },
-
-            //     {
-            //         "text": "target remote localhost:3333"
-            //     },                
-            // ],
+            "program": "/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/STM32-VSCode/out/HAL_demo.elf",
             "setupCommands": [
                 // {
-                //     "text": "set mi-async 1"
+                //     "text": "file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'"
                 // },
-                // {
-                //     "text": "set target-async off"
-                // },
-                {
-                    "text": "file '/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/out/HAL_demo.elf'"
-                },
 
-                {
-                    "text": "target remote localhost:3333"
-                },
+                // {
+                //     "text": "target remote localhost:3333"
+                // },
             ],
             // "preLaunchTask": "build",
             // "stopAtEntry": true,
+            "miDebuggerServerAddress": "localhost:3333",
             "launchCompleteCommand": "None",
             "externalConsole": false,
             "cwd": "${workspaceRoot}",
-            "logging": {
-                "trace": true,
-                "traceResponse": true,
-                "engineLogging": true
-            }
+            // "logging": {
+            //     "trace": true,
+            //     "traceResponse": true,
+            //     "engineLogging": true
+            // }
         },
 
     ]

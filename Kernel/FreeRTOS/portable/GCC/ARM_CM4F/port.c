@@ -151,6 +151,7 @@ debugger. */
 /* Each task maintains its own interrupt status in the critical nesting
 variable. */
 static UBaseType_t uxCriticalNesting = 0xaaaaaaaa;
+__attribute__((used)) const UBaseType_t uxTopUsedPriority = configMAX_PRIORITIES - 1;
 
 /*
  * Setup the timer to generate the tick interrupts.  The implementation in this

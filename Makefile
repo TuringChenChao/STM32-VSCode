@@ -27,7 +27,7 @@ CFLAGS += -I../APP/inc
 # LDFLAGS += -Wl,-wrap=malloc -Wl,-wrap=calloc -Wl,-wrap=realloc -Wl,-wrap=free
 # LDFLAGS += -Wl,-T./LinkerScripts/STM32F429ZI_FLASH.ld -Wl,--gc-sections
 LDFLAGS += -nostartfiles --gc-sections
-# LDFLAGS += --gc-sections
+LDFLAGS += --undefined=uxTopUsedPriority
 
 LDFLAGS += -L$(LIBPATH)/v7e-m/fpv4-sp/hard -lc
 LDFLAGS += -L$(LIBPATH)/v7e-m/fpv4-sp/hard -lg

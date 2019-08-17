@@ -24,6 +24,14 @@
             "options": {
                 "cwd": "/home/cer1991/OpenOCD/openocd/tcl"
             }
+        },
+        {
+            "label": "openocd rtos",
+            "type": "shell",
+            "command": "openocd -f tools/openocd_settings/stlink.cfg -f tools/openocd_settings/stm32f4x_rtos.cfg",
+            "options": {
+                "cwd": "/home/cer1991/STMicroelectronics/workspace/stm32f429/projects/HAL_demo/STM32-VSCode"
+            }
         }
     ],
 }
